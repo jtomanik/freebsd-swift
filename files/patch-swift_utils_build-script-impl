@@ -1,0 +1,11 @@
+--- swift/utils/build-script-impl.orig	2016-11-12 22:15:26.768168000 +0000
++++ swift/utils/build-script-impl	2016-10-28 23:31:07.000000000 +0000
+@@ -827,7 +827,7 @@
+         local default_value="${KNOWN_SETTINGS[$((i+1))]}"
+ 
+         # Find the variable name in our lookup table.
+-        local varname="${known_setting_varnames[$((i/3))]]}"
++        local varname="${known_setting_varnames[$((i/3))]}"
+ 
+         # Establish the associative array mapping.
+         eval "${setting//-/_}_VARNAME=${varname}"
