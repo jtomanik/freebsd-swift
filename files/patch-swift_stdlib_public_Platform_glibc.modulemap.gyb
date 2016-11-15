@@ -1,0 +1,26 @@
+--- swift/stdlib/public/Platform/glibc.modulemap.gyb.orig	2016-11-15 19:13:43.731949000 +0000
++++ swift/stdlib/public/Platform/glibc.modulemap.gyb	2016-11-15 19:15:50.719959000 +0000
+@@ -35,14 +35,15 @@
+       header "${GLIBC_INCLUDE_PATH}/complex.h"
+       export *
+     }
+-    module pty {
+-      header "${GLIBC_INCLUDE_PATH}/pty.h"
+-      export *
+-    }
+-    module utmp {
+-      header "${GLIBC_INCLUDE_PATH}/utmp.h"
+-      export *
+-    }
++    // FIXME: FreeBSD does not have pty.h but libutil.h
++    //module pty {
++    //  header "${GLIBC_INCLUDE_PATH}/pty.h"
++    //  export *
++    //}
++    //module utmp {
++    //  header "${GLIBC_INCLUDE_PATH}/utmp.h"
++    //  export *
++    //}
+ % end
+ 
+ % if CMAKE_SDK in ["LINUX", "ANDROID", "CYGWIN"]:
