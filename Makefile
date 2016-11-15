@@ -73,12 +73,13 @@ do-build:
 		CPPFLAGS="-I${LOCALBASE}/include ${CPPFLAGS}" \
 		CFLAGS="-I${LOCALBASE}/include ${CFLAGS}" \
 		CXXFLAGS="-I${LOCALBASE}/include ${CXXFLAGS}" \
-		LDFLAGS='-B${LOCALBASE}/bin -fuse-ld=bfd' \
+		LDFLAGS='-B${LOCALBASE}/bin' \
 		install_destdir=${STAGEDIR} \
-		./utils/build-script -R --no-assertions \
+		./utils/build-script --host-target freebsd-x86_64 -R --no-assertions \
 		--llbuild \
 		-- \
 		${EXTRA_FLAGS} \
+                --use-gold-linker \
 		--verbose-build \
 		--install-swift \
 		--install-llbuild \
