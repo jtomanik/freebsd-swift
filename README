@@ -1,11 +1,8 @@
 Working git repository for Swift 3.x on FreeBSD
 See https://www.freshports.org/lang/swift/
 
-Remember to set the language
-
-setenv LANG en_US.UTF-8
-
-Not building. Running out of memory in the link for llvm.
-
+* setenv LANG en_US.UTF-8
 * Replaced /usr/bin/ld with /usr/local/bin/ld.gold
-* ./utils/build-script --release -t --host-target freebsd-x86_64 -- --use-gold-linker
+* Installed procfs: https://www.freebsd.org/doc/en_US.ISO8859-1/articles/linux-users/procfs.html
+* ./utils/build-script --release --skip-test-freebsd --host-target freebsd-x86_64
+* patches hack out some pthread code
