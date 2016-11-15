@@ -1,0 +1,22 @@
+--- swift/CMakeLists.txt.orig	2016-10-28 23:31:07.000000000 +0000
++++ swift/CMakeLists.txt	2016-11-14 16:56:58.083951000 +0000
+@@ -391,6 +391,11 @@
+       OUTPUT_STRIP_TRAILING_WHITESPACE)
+ endif()
+ 
++# if uname -m returned amd64, change to x86_64
++if(CMAKE_SYSTEM_PROCESSOR STREQUAL "amd64")
++  set(CMAKE_SYSTEM_PROCESSOR "x86_64")
++endif()
++
+ include(SwiftSharedCMakeConfig)
+ 
+ # Support building Swift as a standalone project, using LLVM as an
+@@ -429,6 +434,7 @@
+ include_directories(BEFORE
+   ${CMAKE_CURRENT_BINARY_DIR}/include
+   ${CMAKE_CURRENT_SOURCE_DIR}/include
++  /usr/local/include
+   )
+ 
+ # A convenience pattern to match Darwin platforms. Example:
