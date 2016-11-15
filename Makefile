@@ -75,6 +75,7 @@ do-build:
 		CXXFLAGS="-I${LOCALBASE}/include ${CXXFLAGS}" \
 		LDFLAGS='-B${LOCALBASE}/bin' \
 		install_destdir=${STAGEDIR} \
+                LANG=en_US.UTF-8 \
 		./utils/build-script --host-target freebsd-x86_64 -R --no-assertions \
 		--llbuild \
 		-- \
