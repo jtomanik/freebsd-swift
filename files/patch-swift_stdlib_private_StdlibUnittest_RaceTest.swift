@@ -1,5 +1,5 @@
---- stdlib/private/StdlibUnittest/RaceTest.swift.orig	2016-11-15 20:14:55.826149000 +0000
-+++ stdlib/private/StdlibUnittest/RaceTest.swift	2016-11-15 19:39:12.595091000 +0000
+--- swift/stdlib/private/StdlibUnittest/RaceTest.swift.orig	2016-11-15 20:14:55.826149000 +0000
++++ swift/stdlib/private/StdlibUnittest/RaceTest.swift	2016-11-15 19:39:12.595091000 +0000
 @@ -44,6 +44,9 @@
  import Glibc
  #endif
